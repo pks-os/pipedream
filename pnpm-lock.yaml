@@ -1162,6 +1162,9 @@ importers:
   components/botbaba:
     specifiers: {}
 
+  components/botcake:
+    specifiers: {}
+
   components/botconversa:
     specifiers:
       '@pipedream/platform': ^1.5.1
@@ -2820,6 +2823,9 @@ importers:
     dependencies:
       '@pipedream/platform': 1.5.1
 
+  components/dust:
+    specifiers: {}
+
   components/dux_soup:
     specifiers:
       '@pipedream/platform': ^1.6.0
@@ -3015,6 +3021,9 @@ importers:
       '@pipedream/platform': 1.5.1
 
   components/eodhd_apis:
+    specifiers: {}
+
+  components/error:
     specifiers: {}
 
   components/esendex:
@@ -7199,6 +7208,9 @@ importers:
       '@pipedream/platform': ^1.6.0
     dependencies:
       '@pipedream/platform': 1.6.0
+
+  components/planly:
+    specifiers: {}
 
   components/planning_center:
     specifiers: {}
