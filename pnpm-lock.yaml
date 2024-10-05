@@ -780,6 +780,9 @@ importers:
     dependencies:
       '@pipedream/platform': 1.6.0
 
+  components/attio:
+    specifiers: {}
+
   components/autobound:
     specifiers: {}
 
@@ -1343,6 +1346,9 @@ importers:
       '@pipedream/platform': 1.6.5
 
   components/burst_sms:
+    specifiers: {}
+
+  components/burstyai:
     specifiers: {}
 
   components/businesslogic:
@@ -2618,7 +2624,10 @@ importers:
       '@pipedream/platform': 1.6.2
 
   components/docnify:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': ^3.0.1
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/docraptor:
     specifiers: {}

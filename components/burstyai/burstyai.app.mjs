@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "if_else",
+  app: "burstyai",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
