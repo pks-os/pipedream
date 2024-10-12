@@ -1,8 +1,6 @@
-import { defineApp } from "@pipedream/types";
-
-export default defineApp({
+export default {
   type: "app",
-  app: "smartsuite",
+  app: "tess_ai_by_pareto",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
@@ -10,4 +8,4 @@ export default defineApp({
       console.log(Object.keys(this.$auth));
     },
   },
-});
+};
