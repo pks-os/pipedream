@@ -2423,6 +2423,9 @@ importers:
     dependencies:
       '@pipedream/platform': 1.5.1
 
+  components/deepimage:
+    specifiers: {}
+
   components/deepl:
     specifiers: {}
 
@@ -6293,9 +6296,9 @@ importers:
 
   components/motion:
     specifiers:
-      '@pipedream/platform': ^1.5.1
+      '@pipedream/platform': ^3.0.3
     dependencies:
-      '@pipedream/platform': 1.5.1
+      '@pipedream/platform': 3.0.3
 
   components/moxie:
     specifiers:
@@ -9682,7 +9685,10 @@ importers:
     specifiers: {}
 
   components/suitedash:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': ^3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/summit:
     specifiers:
