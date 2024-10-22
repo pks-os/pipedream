@@ -272,7 +272,10 @@ importers:
       '@pipedream/platform': 1.5.1
 
   components/adyen:
-    specifiers: {}
+    specifiers:
+      '@adyen/api-library': ^20.0.0
+    dependencies:
+      '@adyen/api-library': 20.0.0
 
   components/aero_workflow:
     specifiers:
@@ -8385,6 +8388,9 @@ importers:
   components/roam_research:
     specifiers: {}
 
+  components/roamresearch:
+    specifiers: {}
+
   components/robocorp:
     specifiers: {}
 
@@ -9356,6 +9362,9 @@ importers:
     dependencies:
       '@pipedream/platform': 3.0.3
 
+  components/smstools:
+    specifiers: {}
+
   components/smtp2go:
     specifiers:
       '@pipedream/platform': ^1.1.1
@@ -9489,7 +9498,10 @@ importers:
       form-data: 4.0.0
 
   components/spider:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': ^3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/spiritme:
     specifiers:
@@ -10141,7 +10153,10 @@ importers:
       '@pipedream/platform': 3.0.3
 
   components/the_magic_drip:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': ^3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/the_odds_api:
     specifiers:
@@ -11941,6 +11956,17 @@ packages:
       uuid: 3.3.2
       validate: 4.5.1
       xml2js: 0.5.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@adyen/api-library/20.0.0:
+    resolution: {integrity: sha512-C+jj5XBTCNs7AFwufOkPLhuqn9bdgSDcqLB6b/Ppi9Fujwt613vWmA1hxeG76RX49vzHZIDJLq6N/v0o2SY1sA==}
+    engines: {node: '>=18'}
+    dependencies:
+      https-proxy-agent: 5.0.1
+    optionalDependencies:
+      '@types/node': 14.18.63
     transitivePeerDependencies:
       - supports-color
     dev: false
