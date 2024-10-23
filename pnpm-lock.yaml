@@ -4551,6 +4551,9 @@ importers:
     dependencies:
       '@pipedream/platform': 1.5.1
 
+  components/heyy:
+    specifiers: {}
+
   components/heyzine:
     specifiers:
       '@pipedream/platform': ^3.0.0
@@ -6532,7 +6535,10 @@ importers:
       '@pipedream/platform': 3.0.3
 
   components/niceboard:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': ^3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/nicereply:
     specifiers:
@@ -9963,7 +9969,10 @@ importers:
     specifiers: {}
 
   components/teach_n_go:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': ^3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/teachable:
     specifiers:
