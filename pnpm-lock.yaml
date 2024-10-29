@@ -434,7 +434,10 @@ importers:
       moment: 2.30.1
 
   components/aitable_ai:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': ^3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/aivoov:
     specifiers:
@@ -3202,6 +3205,12 @@ importers:
   components/eventee:
     specifiers: {}
 
+  components/everhour:
+    specifiers:
+      '@pipedream/platform': ^3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
+
   components/eversign:
     specifiers:
       '@pipedream/platform': ^1.1.1
@@ -5660,7 +5669,10 @@ importers:
       '@pipedream/platform': 1.5.1
 
   components/liveswitch:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': ^3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/llama_ai:
     specifiers:
@@ -7118,6 +7130,9 @@ importers:
       '@pipedream/platform': 3.0.0
       crypto: 1.0.1
 
+  components/parallel:
+    specifiers: {}
+
   components/parma:
     specifiers:
       '@pipedream/platform': ^3.0.0
@@ -8436,7 +8451,10 @@ importers:
     specifiers: {}
 
   components/roamresearch:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': 3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/robocorp:
     specifiers: {}
@@ -9418,7 +9436,10 @@ importers:
       '@pipedream/platform': 3.0.3
 
   components/smstools:
-    specifiers: {}
+    specifiers:
+      '@pipedream/platform': ^3.0.3
+    dependencies:
+      '@pipedream/platform': 3.0.3
 
   components/smtp2go:
     specifiers:
