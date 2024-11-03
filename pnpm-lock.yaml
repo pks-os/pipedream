@@ -1527,6 +1527,9 @@ importers:
     dependencies:
       '@pipedream/platform': 1.6.0
 
+  components/cats:
+    specifiers: {}
+
   components/cdc_national_environmental_public_health_tracking:
     specifiers: {}
 
@@ -3506,6 +3509,9 @@ importers:
       '@pipedream/platform': 3.0.3
     dependencies:
       '@pipedream/platform': 3.0.3
+
+  components/flexisign:
+    specifiers: {}
 
   components/flexmail:
     specifiers:
@@ -6149,6 +6155,9 @@ importers:
       '@pipedream/platform': 1.6.5
 
   components/microsoft_advertising:
+    specifiers: {}
+
+  components/microsoft_azure_ai_translator:
     specifiers: {}
 
   components/microsoft_entra_id:
