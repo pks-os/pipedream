@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "learnworlds",
+  app: "checkout_com",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
