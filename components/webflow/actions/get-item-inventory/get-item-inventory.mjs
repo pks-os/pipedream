@@ -1,22 +1,22 @@
-import app from "../../webflow.app.mjs";
+import webflow from "../../webflow.app.mjs";
 
 export default {
   key: "webflow-get-item-inventory",
   name: "Get Item Inventory",
-  description: "Get the inventory of a specific item. [See the documentation](https://developers.webflow.com/data/reference/ecommerce/inventory/list)",
-  version: "1.0.0",
+  description: "Get the inventory of a specific item. [See the docs here](https://developers.webflow.com/#item-inventory)",
+  version: "1.0.1",
   type: "action",
   props: {
-    app,
+    webflow,
     siteId: {
       propDefinition: [
-        app,
+        webflow,
         "sites",
       ],
     },
     collectionId: {
       propDefinition: [
-        app,
+        webflow,
         "collections",
         (c) => ({
           siteId: c.siteId,
@@ -25,7 +25,7 @@ export default {
     },
     itemId: {
       propDefinition: [
-        app,
+        webflow,
         "items",
         (c) => ({
           collectionId: c.collectionId,
@@ -34,7 +34,9 @@ export default {
     },
   },
   async run({ $ }) {
-    const response = await this.app.getCollectionItemInventory(this.collectionId, this.itemId);
+    const apiClient = this.webflow._createApiClient();
+
+    const response = await apiClient.apiClient.get(`/collections/${this.collectionId}/items/${this.itemId}/inventory`);
 
     $.export("$summary", "Successfully retrieved item inventory");
 

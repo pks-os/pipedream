@@ -1,28 +1,31 @@
-import app from "../../webflow.app.mjs";
+import webflow from "../../webflow.app.mjs";
 
 export default {
   key: "webflow-get-order",
   name: "Get Order",
-  description: "Get info on an order. [See the documentation](https://developers.webflow.com/data/reference/ecommerce/orders/get)",
-  version: "1.0.0",
+  description: "Get an order. [See the docs here](https://developers.webflow.com/#get-order)",
+  version: "1.0.1",
   type: "action",
   props: {
-    app,
+    webflow,
     siteId: {
       propDefinition: [
-        app,
+        webflow,
         "sites",
       ],
     },
     orderId: {
       propDefinition: [
-        app,
+        webflow,
         "orders",
       ],
     },
   },
   async run({ $ }) {
-    const response = await this.app.getOrder(this.siteId, this.orderId);
+    const response = await this.webflow.getOrder({
+      siteId: this.siteId,
+      orderId: this.orderId,
+    });
 
     $.export("$summary", "Successfully retrieved order");
 

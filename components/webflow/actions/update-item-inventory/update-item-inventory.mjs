@@ -1,22 +1,22 @@
-import app from "../../webflow.app.mjs";
+import webflow from "../../webflow.app.mjs";
 
 export default {
   key: "webflow-update-item-inventory",
   name: "Update Item Inventory",
-  description: "Update the inventory of a specific item. [See the documentation](https://developers.webflow.com/data/reference/ecommerce/inventory/update)",
-  version: "0.0.5",
+  description: "Update the inventory of a specific item. [See the docs here](https://developers.webflow.com/#update-item-inventory)",
+  version: "1.0.1",
   type: "action",
   props: {
-    app,
+    webflow,
     siteId: {
       propDefinition: [
-        app,
+        webflow,
         "sites",
       ],
     },
     collectionId: {
       propDefinition: [
-        app,
+        webflow,
         "collections",
         (c) => ({
           siteId: c.siteId,
@@ -25,7 +25,7 @@ export default {
     },
     itemId: {
       propDefinition: [
-        app,
+        webflow,
         "items",
         (c) => ({
           collectionId: c.collectionId,
@@ -43,28 +43,35 @@ export default {
     },
     quantity: {
       label: "Quantity",
-      description: "If specified, sets quantity to this value. Can only be used with the `finite` inventory type, and if `Update Quantity` is not specified.",
+      description: "The quantity will be seted with this value. This just can be used with `finite` option selected and without `updateQuantity` value.",
       type: "integer",
       optional: true,
     },
     updateQuantity: {
       label: "Update Quantity",
-      description: "If specified, adds this value to the current quantity. Can only be used with the `finite` inventory type, and if `Quantity` is not specified.",
+      description: "This value will be added to the quantity. This just can be used with `finite` option selected and without `quantity` value.",
       type: "integer",
       optional: true,
     },
   },
   async run({ $ }) {
+    const apiClient = this.webflow._createApiClient();
+
     const {
-      app,
-      // eslint-disable-next-line no-unused-vars
-      siteId,
-      collectionId,
-      itemId,
-      ...data
+      inventoryType,
+      quantity,
+      updateQuantity,
     } = this;
 
-    const response = await app.updateCollectionItemInventory(collectionId, itemId, data);
+    const response = await apiClient.patch(`/collections/${this.collectionId}/items/${this.itemId}/inventory`, {
+      data: {
+        fields: {
+          inventoryType,
+          quantity,
+          updateQuantity,
+        },
+      },
+    });
 
     $.export("$summary", "Successfully updated item inventory");
 

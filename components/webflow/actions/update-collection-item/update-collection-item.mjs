@@ -1,38 +1,37 @@
-import app from "../../webflow.app.mjs";
+import webflow from "../../webflow.app.mjs";
 
 export default {
   key: "webflow-update-collection-item",
   name: "Update Collection Item",
-  description:
-    "Update collection item. [See the documentation](https://developers.webflow.com/data/reference/cms/collection-items/bulk-items/update-items)",
-  version: "1.0.0",
+  description: "Update collection item. [See the documentation](https://developers.webflow.com/#update-collection-item)",
+  version: "1.0.1",
   type: "action",
   props: {
-    app,
+    webflow,
     siteId: {
       propDefinition: [
-        app,
+        webflow,
         "sites",
       ],
     },
     collectionId: {
       propDefinition: [
-        app,
+        webflow,
         "collections",
         (c) => ({
           siteId: c.siteId,
         }),
       ],
+      reloadProps: true,
     },
     itemId: {
       propDefinition: [
-        app,
+        webflow,
         "items",
         (c) => ({
           collectionId: c.collectionId,
         }),
       ],
-      reloadProps: true,
     },
   },
   async additionalProps() {
@@ -40,22 +39,17 @@ export default {
     if (!this.collectionId) {
       return props;
     }
-    const { fields } = await this.app.getCollection(this.collectionId);
+    const { fields } = await this.webflow.getCollection(this.collectionId);
     for (const field of fields) {
-      if (
-        field.isEditable &&
-        field.slug !== "isArchived" &&
-        field.slug !== "isDraft"
-      ) {
+      if (field.editable && field.slug !== "_archived" && field.slug !== "_draft") {
         props[field.slug] = {
           type: "string",
           label: field.name,
-          description:
-            field.slug === "name"
-              ? "Name given to the Item."
-              : field.slug === "slug"
-                ? "URL structure of the Item in your site. Note: Updates to an item slug will break all links referencing the old slug."
-                : "See the documentation for additional information about [Field Types & Item Values](https://developers.webflow.com/reference/field-types-item-values).",
+          description: field.slug === "name"
+            ? "Name given to the Item."
+            : field.slug === "slug"
+              ? "URL structure of the Item in your site. Note: Updates to an item slug will break all links referencing the old slug."
+              : "See the documentation for additional information about [Field Types & Item Values](https://developers.webflow.com/reference/field-types-item-values).",
           optional: true,
         };
       }
@@ -65,7 +59,7 @@ export default {
   },
   async run({ $ }) {
     const {
-      app,
+      webflow,
       // eslint-disable-next-line no-unused-vars
       siteId,
       collectionId,
@@ -75,17 +69,21 @@ export default {
       ...customFields
     } = this;
 
-    const item = await app.getCollectionItem(collectionId, itemId);
+    const webflowClient = webflow._createApiClient();
 
-    const response = await app.updateCollectionItem(collectionId, itemId, {
-      id: itemId,
-      isArchived: false,
-      isDraft: false,
-      fieldData: {
-        ...customFields,
-        name: name || item.fieldData.name,
-        slug: slug || item.fieldData.slug,
-      },
+    const item = await webflowClient.item({
+      collectionId,
+      itemId,
+    });
+
+    const response = await webflowClient.updateItem({
+      collectionId,
+      itemId,
+      name: name || item.name,
+      slug: slug || item.slug,
+      _archived: false,
+      _draft: false,
+      ...customFields,
     });
 
     $.export("$summary", "Successfully updated collection item");

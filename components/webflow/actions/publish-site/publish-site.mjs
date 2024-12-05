@@ -1,22 +1,22 @@
-import app from "../../webflow.app.mjs";
+import webflow from "../../webflow.app.mjs";
 
 export default {
   key: "webflow-publish-site",
   name: "Publish Site",
-  description: "Publish a site. [See the documentation](https://developers.webflow.com/data/reference/sites/publish)",
-  version: "1.0.0",
+  description: "Get a site in a specific domain. [See the docs here](https://developers.webflow.com/#publish-site)",
+  version: "1.0.1",
   type: "action",
   props: {
-    app,
+    webflow,
     siteId: {
       propDefinition: [
-        app,
+        webflow,
         "sites",
       ],
     },
     domains: {
       propDefinition: [
-        app,
+        webflow,
         "domains",
         (c) => ({
           siteId: c.siteId,
@@ -25,7 +25,12 @@ export default {
     },
   },
   async run({ $ }) {
-    const response = await this.app.publishSite(this.siteId, this.domains);
+    const webflow = this.webflow._createApiClient();
+
+    const response = await webflow.publishSite({
+      siteId: this.siteId,
+      domains: this.domains,
+    });
 
     $.export("$summary", "Successfully published site");
 

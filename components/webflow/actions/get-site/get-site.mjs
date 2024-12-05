@@ -1,22 +1,22 @@
-import app from "../../webflow.app.mjs";
+import webflow from "../../webflow.app.mjs";
 
 export default {
   key: "webflow-get-site",
   name: "Get Site",
-  description: "Get a site. [See the documentation](https://developers.webflow.com/data/reference/sites/get)",
-  version: "1.0.0",
+  description: "Get a site. [See the docs here](https://developers.webflow.com/#get-specific-site)",
+  version: "1.0.1",
   type: "action",
   props: {
-    app,
+    webflow,
     siteId: {
       propDefinition: [
-        app,
+        webflow,
         "sites",
       ],
     },
   },
   async run({ $ }) {
-    const response = await this.app.getSite(this.siteId);
+    const response = await this.webflow.getSite(this.siteId);
 
     $.export("$summary", "Successfully retrieved site");
 

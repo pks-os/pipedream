@@ -1,11 +1,11 @@
-import common from "../common/common.mjs";
+import common from "../common/collection-common.mjs";
 
 export default {
   type: "source",
   key: "webflow-changed-collection-item",
-  name: "Collection Item Updated",
-  description: "Emit new event when a collection item is changed. [See the documentation](https://developers.webflow.com/data/reference/webhooks/events/collection-item-changed)",
-  version: "1.0.0",
+  name: "New Changed Collection Item",
+  description: "Emit new event when a collection item is changed. [See the docs here](https://developers.webflow.com/#model16)",
+  version: "1.0.1",
   ...common,
   methods: {
     ...common.methods,
@@ -13,14 +13,11 @@ export default {
       return "collection_item_changed";
     },
     generateMeta(data) {
-      const {
-        id, fieldData, lastUpdated,
-      } = data;
-      const ts = Date.parse(lastUpdated);
+      const ts = Date.parse(data["updated-on"]);
 
       return {
-        id: `${id}-${ts}`,
-        summary: `Item updated: ${fieldData?.slug ?? fieldData?.name ?? id}`,
+        id: `${data._id}-${ts}`,
+        summary: `Collection ${data.slug} item changed`,
         ts,
       };
     },
