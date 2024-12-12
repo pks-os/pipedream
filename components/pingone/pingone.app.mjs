@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "webflow_v2",
+  app: "pingone",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
