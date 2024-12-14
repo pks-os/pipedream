@@ -1239,6 +1239,8 @@ importers:
         specifier: ^1.6.0
         version: 1.6.6
 
+  components/boldsign: {}
+
   components/boloforms:
     dependencies:
       '@pipedream/platform':
@@ -1505,8 +1507,7 @@ importers:
 
   components/callingly: {}
 
-  components/calllerapi:
-    specifiers: {}
+  components/calllerapi: {}
 
   components/callpage:
     dependencies:
@@ -1624,11 +1625,11 @@ importers:
   components/chargebee:
     dependencies:
       '@pipedream/platform':
-        specifier: ^1.4.1
-        version: 1.6.6
+        specifier: ^3.0.3
+        version: 3.0.3
       chargebee:
-        specifier: ^2.22.3
-        version: 2.44.0
+        specifier: ^3.2.1
+        version: 3.2.1
 
   components/chargeblast:
     dependencies:
@@ -17858,9 +17859,9 @@ packages:
   charenc@0.0.2:
     resolution: {integrity: sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==}
 
-  chargebee@2.44.0:
-    resolution: {integrity: sha512-yPAtwVJfVku6G8xWOGteXu5SzmCKy7H0KqCCU8yyl6FR2ae7Lu5Jr3dfSC/PdLO5XY7jhRo5E716j8rlenO4Uw==}
-    engines: {node: '>=0.6.0'}
+  chargebee@3.2.1:
+    resolution: {integrity: sha512-wrq52h+W2dRLSOV1XDbEKvIcTNXTUSZEQ7d1a7TZjhi8iXJBGdbkolTpFOKo2/NdMNtNMmfCp6iErzEyV8Odig==}
+    engines: {node: '>=18.*'}
 
   charm@1.0.2:
     resolution: {integrity: sha512-wqW3VdPnlSWT4eRiYX+hcs+C6ViBPUWk1qTCd+37qw9kEm/a5n2qcyQDMBWvSYKN/ctqZzeXNQaeBjOetJJUkw==}
@@ -24508,22 +24509,22 @@ packages:
   superagent@3.8.1:
     resolution: {integrity: sha512-VMBFLYgFuRdfeNQSMLbxGSLfmXL/xc+OO+BZp41Za/NRDBet/BNbkRJrYzCUu0u4GU0i/ml2dtT8b9qgkw9z6Q==}
     engines: {node: '>= 4.0'}
-    deprecated: Please upgrade to v7.0.2+ of superagent.  We have fixed numerous issues with streams, form-data, attach(), filesystem errors not bubbling up (ENOENT on attach()), and all tests are now passing.  See the releases tab for more information at <https://github.com/visionmedia/superagent/releases>.
+    deprecated: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
 
   superagent@4.1.0:
     resolution: {integrity: sha512-FT3QLMasz0YyCd4uIi5HNe+3t/onxMyEho7C3PSqmti3Twgy2rXT4fmkTz6wRL6bTF4uzPcfkUCa8u4JWHw8Ag==}
     engines: {node: '>= 6.0'}
-    deprecated: Please upgrade to v7.0.2+ of superagent.  We have fixed numerous issues with streams, form-data, attach(), filesystem errors not bubbling up (ENOENT on attach()), and all tests are now passing.  See the releases tab for more information at <https://github.com/visionmedia/superagent/releases>.
+    deprecated: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
 
   superagent@5.3.1:
     resolution: {integrity: sha512-wjJ/MoTid2/RuGCOFtlacyGNxN9QLMgcpYLDQlWFIhhdJ93kNscFonGvrpAHSCVjRVj++DGCglocF7Aej1KHvQ==}
     engines: {node: '>= 7.0.0'}
-    deprecated: Please upgrade to v7.0.2+ of superagent.  We have fixed numerous issues with streams, form-data, attach(), filesystem errors not bubbling up (ENOENT on attach()), and all tests are now passing.  See the releases tab for more information at <https://github.com/visionmedia/superagent/releases>.
+    deprecated: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
 
   superagent@7.1.6:
     resolution: {integrity: sha512-gZkVCQR1gy/oUXr+kxJMLDjla434KmSOKbx5iGD30Ql+AkJQ/YlPKECJy2nhqOsHLjGHzoDTXNSjhnvWhzKk7g==}
     engines: {node: '>=6.4.0 <13 || >=14'}
-    deprecated: Please downgrade to v7.1.5 if you need IE/ActiveXObject support OR upgrade to v8.0.0 as we no longer support IE and published an incorrect patch version (see https://github.com/visionmedia/superagent/issues/1731)
+    deprecated: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
 
   supports-color@2.0.0:
     resolution: {integrity: sha512-KKNVtd6pCYgPIKU4cp2733HWYCpplQhddZLBUryaAHou723x+FRzQ5Df824Fj+IyyuiQTRoub4SnIFfIcrp70g==}
@@ -33722,10 +33723,7 @@ snapshots:
 
   charenc@0.0.2: {}
 
-  chargebee@2.44.0:
-    dependencies:
-      q: 1.5.1
-      safer-buffer: 2.1.2
+  chargebee@3.2.1: {}
 
   charm@1.0.2:
     dependencies:
