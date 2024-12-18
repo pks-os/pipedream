@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "callerapi",
+  app: "screenshot_fyi",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
