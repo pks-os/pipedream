@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "richpanel",
+  app: "recruiterflow",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data

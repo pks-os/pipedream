@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "richpanel",
+  app: "bitdefender_gravityzone",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data

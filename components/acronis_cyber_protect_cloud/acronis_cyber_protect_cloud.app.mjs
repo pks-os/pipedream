@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "richpanel",
+  app: "acronis_cyber_protect_cloud",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
