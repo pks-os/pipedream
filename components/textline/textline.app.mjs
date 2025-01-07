@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "recruiterflow",
+  app: "textline",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
