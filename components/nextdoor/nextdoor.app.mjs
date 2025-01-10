@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "motive",
+  app: "nextdoor",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
