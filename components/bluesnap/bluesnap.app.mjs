@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "nextdoor",
+  app: "bluesnap",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
