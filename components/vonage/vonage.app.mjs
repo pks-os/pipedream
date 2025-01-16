@@ -1,6 +1,6 @@
 export default {
   type: "app",
-  app: "grafana",
+  app: "vonage",
   propDefinitions: {},
   methods: {
     // this.$auth contains connected account data
