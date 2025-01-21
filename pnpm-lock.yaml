@@ -566,6 +566,9 @@ importers:
 
   components/alphamoon: {}
 
+  components/alteryx_analytics_cloud:
+    specifiers: {}
+
   components/altiria:
     dependencies:
       '@pipedream/platform':
@@ -698,6 +701,9 @@ importers:
       '@pipedream/platform':
         specifier: ^1.5.1
         version: 1.6.6
+
+  components/apaleo:
+    specifiers: {}
 
   components/apex_27: {}
 
@@ -1860,7 +1866,11 @@ importers:
 
   components/clarify: {}
 
-  components/clear_books: {}
+  components/clear_books:
+    dependencies:
+      '@pipedream/platform':
+        specifier: ^3.0.3
+        version: 3.0.3
 
   components/clearbit:
     dependencies:
@@ -2800,7 +2810,11 @@ importers:
 
   components/dispatch: {}
 
-  components/dixa: {}
+  components/dixa:
+    dependencies:
+      '@pipedream/platform':
+        specifier: ^3.0.3
+        version: 3.0.3
 
   components/dnsfilter:
     dependencies:
@@ -3185,7 +3199,23 @@ importers:
 
   components/efinder: {}
 
-  components/egnyte: {}
+  components/egnyte:
+    dependencies:
+      '@pipedream/platform':
+        specifier: ^3.0.3
+        version: 3.0.3
+      bottleneck:
+        specifier: ^2.19.5
+        version: 2.19.5
+      form-data:
+        specifier: ^4.0.1
+        version: 4.0.1
+      mime:
+        specifier: ^4.0.6
+        version: 4.0.6
+      path:
+        specifier: ^0.12.7
+        version: 0.12.7
 
   components/elastic_email: {}
 
@@ -4868,6 +4898,9 @@ importers:
         version: 1.6.6
 
   components/homerun: {}
+
+  components/honeyhive:
+    specifiers: {}
 
   components/hookdeck:
     dependencies:
@@ -6988,6 +7021,9 @@ importers:
         specifier: ^3.0.1
         version: 3.0.3
 
+  components/nmbrs:
+    specifiers: {}
+
   components/nocodb:
     dependencies:
       '@pipedream/platform':
@@ -7120,6 +7156,15 @@ importers:
   components/oauth_app_demo_1: {}
 
   components/ocr_web_service: {}
+
+  components/ocrspace:
+    dependencies:
+      '@pipedream/platform':
+        specifier: ^3.0.3
+        version: 3.0.3
+      mime:
+        specifier: ^4.0.6
+        version: 4.0.6
 
   components/octoparse: {}
 
@@ -11228,8 +11273,8 @@ importers:
   components/unthread:
     dependencies:
       '@pipedream/platform':
-        specifier: ^1.6.6
-        version: 1.6.6
+        specifier: ^3.0.3
+        version: 3.0.3
 
   components/upbooks:
     dependencies:
@@ -11420,6 +11465,9 @@ importers:
         version: 1.6.6
 
   components/vero: {}
+
+  components/verticalresponse:
+    specifiers: {}
 
   components/vestaboard:
     dependencies:
@@ -11806,6 +11854,9 @@ importers:
 
   components/wolfram_alpha: {}
 
+  components/wolfram_alpha_api:
+    specifiers: {}
+
   components/wonderchat: {}
 
   components/woocommerce:
@@ -11963,7 +12014,11 @@ importers:
         specifier: ^1.2.0
         version: 1.6.6
 
-  components/xverify: {}
+  components/xverify:
+    dependencies:
+      '@pipedream/platform':
+        specifier: ^3.0.3
+        version: 3.0.3
 
   components/y_gy:
     dependencies:
@@ -22394,6 +22449,11 @@ packages:
 
   mime@4.0.4:
     resolution: {integrity: sha512-v8yqInVjhXyqP6+Kw4fV3ZzeMRqEW6FotRsKXjRS5VMTNIuXsdRoAvklpoRgSqXm6o9VNH4/C0mgedko9DdLsQ==}
+    engines: {node: '>=16'}
+    hasBin: true
+
+  mime@4.0.6:
+    resolution: {integrity: sha512-4rGt7rvQHBbaSOF9POGkk1ocRP16Md1x36Xma8sz8h8/vfCUI2OtEIeCqe4Ofes853x4xDoPiFLIT47J5fI/7A==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -39696,6 +39756,8 @@ snapshots:
   mime@3.0.0: {}
 
   mime@4.0.4: {}
+
+  mime@4.0.6: {}
 
   mimer@2.0.2: {}
 
